@@ -1,10 +1,15 @@
 from sqlalchemy import create_engine
 import pandas as pd
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # Connection details - replace with your DBeaver credentials
 DB_TYPE = 'postgresql'
 DB_USER = 'postgres'     
-DB_PASS = 'customerint2026'  # replace with your actual password
+DB_PASS = os.getenv('DB_PASS')
 DB_HOST = 'localhost'
 DB_PORT = '5432'
 DB_NAME = 'mydb'
